@@ -5,7 +5,7 @@ import altair as alt
 
 alt.themes.enable("dark")
 
-def genre_count_bar(df, top_n=20, height=None):
+def genre_count_bar(df, top_n=100, height=None):
     counts = df.groupby('genres').size().reset_index(name='count')
     counts = counts.sort_values('count', ascending=False).head(top_n)
     row_height = 28
@@ -17,7 +17,7 @@ def genre_count_bar(df, top_n=20, height=None):
     ).properties(height=height, title=f'Top {len(counts)} Genres by Rating Count')
     return chart
 
-def genre_mean_rating_bar(df, top_n=20, height=None):
+def genre_mean_rating_bar(df, top_n=100, height=None):
     means = df.groupby('genres')['rating'].mean().reset_index(name='mean_rating')
     means = means.sort_values('mean_rating', ascending=False).head(top_n)
     row_height = 28
@@ -102,11 +102,11 @@ st.title("Movie Ratings Explorer")
 
 # Q1
 st.header("Genre counts")
-st.altair_chart(genre_count_bar(df, top_n=20), use_container_width=True)
+st.altair_chart(genre_count_bar(df, top_n=71), use_container_width=True)
 
 # Q2
 st.header("Genre mean ratings")
-st.altair_chart(genre_mean_rating_bar(df, top_n=20), use_container_width=True)
+st.altair_chart(genre_mean_rating_bar(df, top_n=71), use_container_width=True)
 
 # Q3
 st.header("Ratings by year")
