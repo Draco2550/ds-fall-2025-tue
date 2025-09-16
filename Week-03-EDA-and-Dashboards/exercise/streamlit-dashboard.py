@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd
 import altair as alt
-import plotly.express as px
+# import plotly.express as px
 
 alt.themes.enable("dark")
 
