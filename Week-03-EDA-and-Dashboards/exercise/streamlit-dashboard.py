@@ -63,7 +63,7 @@ def top_n_movies_bar(df, min_ratings=50, top_n=5):
 
 @st.cache_data
 def load_data():
-    return pd.read_csv("./data/movie_ratings.csv")
+    return pd.read_csv("./Week-03-EDA-and-Dashboards/data/movie_ratings.csv")
 
 df = load_data()
 
@@ -131,23 +131,6 @@ st.altair_chart(top_n_movies_bar(df_5_best_rated, min_ratings=min_ratings, top_n
 
 
 # Barchart -> Use for df_genres 
-# def make_bar_chart(input_df, input_x, input_y, input_color_theme):
-#     num_rows = input_df.shape[0]
-#     row_height = 25  # pixel of space
-
-#     chart_height = max(400, num_rows * row_height)  # minimum height fallback
-
-#     chart = alt.Chart(input_df).mark_bar().encode(
-#         y=alt.Y(f'{input_y}:N', sort='-x', axis=alt.Axis(title="State")),
-#         x=alt.X(f'{input_x}:Q', axis=alt.Axis(title="Median Price")),
-#         color=alt.Color(f'{input_x}:Q', scale=alt.Scale(scheme=input_color_theme)),
-#         tooltip=[input_y, input_x]
-#     ).properties(height=chart_height).configure_axis(
-#         labelFontSize=12,
-#         titleFontSize=14
-#     )
-#     return chart
-
 
 # #Choropleth map
 # def make_choropleth(input_df, input_id, input_column, input_color_theme):
