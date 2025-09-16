@@ -102,21 +102,21 @@ st.title("Movie Ratings Explorer")
 
 # Q1
 st.header("Genre counts")
-st.altair_chart(genre_count_bar(df_genre_sorted, top_n=20), use_container_width=True)
+st.altair_chart(genre_count_bar(df, top_n=20), use_container_width=True)
 
 # Q2
 st.header("Genre mean ratings")
-st.altair_chart(genre_mean_rating_bar(df_high_ratings, top_n=20), use_container_width=True)
+st.altair_chart(genre_mean_rating_bar(df, top_n=20), use_container_width=True)
 
 # Q3
 st.header("Ratings by year")
-st.altair_chart(ratings_by_year_line(df_movie_years, agg='mean'), use_container_width=True)
+st.altair_chart(ratings_by_year_line(df, agg='mean'), use_container_width=True)
 
 # Q4
 st.header("Top movies (filterable)")
 min_ratings = st.slider("Min ratings", 10, 500, 50)
 top_n = st.slider("Top N movies", 1, 20, 5)
-st.altair_chart(top_n_movies_bar(df_5_best_rated, min_ratings=min_ratings, top_n=top_n), use_container_width=True)
+st.altair_chart(top_n_movies_bar(df, min_ratings=min_ratings, top_n=top_n), use_container_width=True)
 
 # # Sidebar
 # with st.sidebar:
