@@ -63,7 +63,7 @@ def top_n_movies_bar(df, min_ratings=50, top_n=5):
 
 @st.cache_data
 def load_data():
-    return pd.read_csv("/workspaces/ds-fall-2025-tue/Week-03-EDA-and-Dashboards/data/movie_ratings.csv")
+    return pd.read_csv("Week-03-EDA-and-Dashboards/data/movie_ratings.csv")
 
 df = load_data()
 
